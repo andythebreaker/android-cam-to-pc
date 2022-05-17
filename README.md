@@ -9,18 +9,30 @@
 	- Python3
 
 	On your Phone:
-	- IP Webcam app - https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en
+	- [android apk: andythebreaker/camerax_color_detect](https://github.com/andythebreaker/camerax_color_detect)
+	- [download from github](https://github.com/andythebreaker/camerax_color_detect/files/8709069/app-release.zip)
+	On your Server:
+	- [node-media-server](https://www.npmjs.com/package/node-media-server)
+	- [REF](https://hackmd.io/@andythebreaker/rJ66DIzQt#%E4%BC%BA%E6%9C%8D%E5%99%A8)
 
 2. How to use:
 
+#### on server
+
+- `mkdir any_name`
+- `cd any_name`
+- `npm install node-media-server`
+- `vi app.js`
+- copy code from https://hackmd.io/@andythebreaker/rJ66DIzQt#codenodejs
+- edit code port
+
 	- Run `pip install -r requirements.txt`
-	- Go to `webcam.py` and change url to your url from IP Webcam app
-	- Change `img_width` and `img_height` to desired values if you want to resize original camera output
+	- Go to `webcam.py` and change url to `rtmp://yourip:yourport`
 	- Run IP Webcam app and then start `webcam.py`
 	- Open OBS and add new `Window Capture` and add camera window
 	- Under the `Controls` in OBS windows, click `Start Virtaul Camera`
 	- Now go to app that you want to use camera with and just select `OBS-Camera`
 
-3. Notes:
+1. Notes:
    
-	- 5GHz WiFi can yield smoother camera output
+	- 15 sec delay
