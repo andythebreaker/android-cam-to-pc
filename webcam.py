@@ -7,9 +7,10 @@ from pyvirtualcam import PixelFormat
 
 if __name__ == '__main__':
     
-    myrtmp_addr = "rtmp://m1rry.11.ncku.1du.tw:51935"
+    myrtmp_addr = "rtmp://merry.ee.ncku.edu.tw:51935"
     cap = cv2.VideoCapture(myrtmp_addr)
     err0,frame0 = cap.read()
+    frame_tmp=frame0
     
     if err0:
         height, width, chna1 = frame0.shape
@@ -29,9 +30,17 @@ if __name__ == '__main__':
                 
                 err,frame = cap.read()
                 tmp_err=err
-                # Send to virtual cam.
-                #cam.send(cvframe)
-                cam.send(frame)
 
-                # Wait until it's time for the next frame.
-                cam.sleep_until_next_frame()
+                if frame:
+
+                    # Send to virtual cam.
+                    #cam.send(cvframe)
+                    cam.send(frame)
+                    frame_tmp=frame
+
+                    # Wait until it's time for the next frame.
+                    cam.sleep_until_next_frame()
+                else:
+                    cam.send(frame_tmp)
+                    print("fuckedup")
+                    cam.sleep_until_next_frame()
