@@ -11,6 +11,7 @@
 	On your Phone:
 	- [android apk: andythebreaker/camerax_color_detect](https://github.com/andythebreaker/camerax_color_detect)
 	- [download from github](https://github.com/andythebreaker/camerax_color_detect/files/8709069/app-release.zip)
+	
 	On your Server:
 	- [node-media-server](https://www.npmjs.com/package/node-media-server)
 	- [REF](https://hackmd.io/@andythebreaker/rJ66DIzQt#%E4%BC%BA%E6%9C%8D%E5%99%A8)
